@@ -1,0 +1,56 @@
+const Discentes = [
+  { Nome: "Alice dos Santos Pinheiro", Funcao: "Membro", Imagem: {} },
+  { Nome: "Alicia Samilly Oliveira Bento", Funcao: "Membro", Imagem: {} },
+  { Nome: "Allan Gabriel Silva de Freitas", Funcao: "Membro", Imagem: {} },
+  { Nome: "Amanda Cristina Alencar Gomes", Funcao: "Membro", Imagem: {} },
+  { Nome: "Ana Vitoria de Queiroz Oliveira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Andrews Ferreira de Paiva Silva", Funcao: "Membro", Imagem: {} },
+  { Nome: "Andrey de Oliveira Sabino", Funcao: "Membro", Imagem: {} },
+  { Nome: "Antonia Jaelica Souza Oliveira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Cicero Araujo Rodrigues", Funcao: "Membro", Imagem: {} },
+  { Nome: "Evelyn Cristina de Oliveira Gomes", Funcao: "Membro", Imagem: {} },
+  { Nome: "Francisco Felipe Chaves Lima", Funcao: "Membro", Imagem: {} },
+  { Nome: "Francisco Lailson de Almeida", Funcao: "Membro", Imagem: {} },
+  { Nome: "Gabrielle Niare Pereira de Oliveira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Jakeline Benicio de Lima", Funcao: "Membro", Imagem: {} },
+  { Nome: "Joao Lucas Fernandes e Silva", Funcao: "Membro", Imagem: {} },
+  { Nome: "Jose Danilo Santos do Nascimento", Funcao: "Membro", Imagem: {} },
+  { Nome: "Jose Pereira do Nascimento Neto", Funcao: "Membro", Imagem: {} },
+  { Nome: "Laura Goncalves Fernandes", Funcao: "Membro", Imagem: {} },
+  { Nome: "Lavinia Dantas de Mesquita", Funcao: "Membro", Imagem: {} },
+  { Nome: "Leandra Lauana Izidio Ferreira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Lidiana Costa de Souza", Funcao: "Membro", Imagem: {} },
+  { Nome: "Lucas Alves Ferreira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Lucas Mairon Oliveira Camilo", Funcao: "Membro", Imagem: {} },
+  { Nome: "Manoel Nascimento de Paiva Neto", Funcao: "Membro", Imagem: {} },
+  { Nome: "Maria Alice Ferreira Teixeira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Maria Francisca Pessoa de Queiroz", Funcao: "Membro", Imagem: {} },
+  { Nome: "Maria Herculana da Silva Souza", Funcao: "Membro", Imagem: {} },
+  { Nome: "Maria Isabelly Lima de Sousa", Funcao: "Membro", Imagem: {} },
+  { Nome: "Maria Karoline Firmino de Moura", Funcao: "Membro", Imagem: {} },
+  { Nome: "Maria Luma da Silva Oliveira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Mateus Gomes Salome", Funcao: "Membro", Imagem: {} },
+  { Nome: "Micaely da Conceicao Melo", Funcao: "Membro", Imagem: {} },
+  { Nome: "Moises Guilherme Silva Fernandes", Funcao: "Membro", Imagem: {} },
+  { Nome: "Nathan Cardoso Linhares", Funcao: "Membro", Imagem: {} },
+  { Nome: "Pedro Arthur Santos Martins", Funcao: "Membro", Imagem: {} },
+  { Nome: "Pedro Carlos Lima Paiva", Funcao: "Membro", Imagem: {} },
+  { Nome: "Pedro Lucas da Silva Lima", Funcao: "Membro", Imagem: {} },
+  { Nome: "Pedro Lucas Silva Cordeiro", Funcao: "Membro", Imagem: {} },
+  { Nome: "Pedro Victor Soares Goncalo", Funcao: "Membro", Imagem: {} },
+  { Nome: "Rafael Oliveira Freire", Funcao: "Membro", Imagem: {} },
+  { Nome: "Thiago da Silva Lima", Funcao: "Membro", Imagem: {} },
+  { Nome: "Vinicius Anacleto de Almeida", Funcao: "Membro", Imagem: {} },
+];
+
+const Servidores = [
+  { Nome: "Eduardo Araujo de Medeiros", Funcao: "Membro", Imagem: {} },
+  { Nome: "Jean Ribeiro dos Santos", Funcao: "Membro" },
+];
+
+const Docentes = [
+  { Nome: "Reudismam Rolim de Sousa", Funcao: "Coordenador", Imagem: {} },
+  { Nome: "Walber Jose Adriano Silva", Funcao: "Vice-Coordenador", Imagem: {} },
+];
+
+export { Discentes, Servidores, Docentes };
