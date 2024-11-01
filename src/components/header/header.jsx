@@ -14,7 +14,7 @@ function Header() {
   ];
 
   return (
-    <header className="w-full p-3 flex justify-around items-center border border-[#F08B3833]">
+    <header className="w-full p-3 flex justify-around items-center border-b border-[#F08B3833]">
       <div className="h-full">
         <img src={Logo} alt="Logo" className="w-[230px]" />
       </div>
@@ -51,6 +51,7 @@ function Header() {
         <div
           style={{ backdropFilter: "blur(10px)" }}
           className="absolute top-0 left-0 w-full bg-black h-screen bg-opacity-70 flex flex-col items-center justify-center"
+          onClick={() => setShow(false)}
         >
           <ul className="text-[24px] text-[#FFFFFFB2] space-y-4">
             {menuItems.map((item) => (
