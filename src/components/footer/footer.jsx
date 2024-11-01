@@ -3,11 +3,11 @@ import LogoCarcara from "../header/images/Logo_Carcara.png";
 function footer() {
   return (
     <footer className="bg-[#030212] w-full text-[#FFFFFFB2] flex flex-col pt-6">
-      <div className="flex justify-around items-center gap-2 pb-6">
+      <div className="flex justify-around items-center gap-10 pb-6 max-md:px-5">
         <div>
           <img src={LogoCarcara} alt="" className="w-[250px]" />
         </div>
-        <div className="flex gap-32">
+        <div className="flex gap-32 max-md:gap-10">
           <div>
             <h1 className="text-[14px] py-2 font-bold font-montserrat">
               Navegação
