@@ -1,17 +1,25 @@
 import { useState } from "react";
 import Logo from "./images/Logo_Carcara.png";
 import Menu from "./images/menu.png";
-import CloseIcon from "./images/close.png";
+
+
 function Header() {
   const [topico, setTopico] = useState("");
   const [show, setShow] = useState(false);
 
   const menuItems = [
-    { name: "Projeto", href: "#projeto" },
-    { name: "Atividade", href: "#atividade" },
-    { name: "Membros", href: "#membros" },
-    { name: "Contato", href: "#contato" },
+    { name: "Projeto", href: "projeto" },
+    { name: "Atividade", href: "atividade" },
+    { name: "Membros", href: "membros" },
+    { name: "Contato", href: "contato" },
   ];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="w-full p-3 flex justify-around items-center border-b border-[#F08B3833]">
@@ -37,7 +45,10 @@ function Header() {
             <a
               href={item.href}
               className="hover:text-white transition-colors duration-500"
-              onClick={() => setTopico(item.name.toLowerCase())}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href);
+                setTopico(item.name.toLowerCase())}}
               aria-current={
                 topico === item.name.toLowerCase() ? "page" : undefined
               }
@@ -59,7 +70,9 @@ function Header() {
                 <a
                   href={item.href}
                   className="hover:text-white transition-colors duration-500"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
                     setTopico(item.name.toLowerCase());
                     setShow(false); // Fechar o menu após clicar
                   }}

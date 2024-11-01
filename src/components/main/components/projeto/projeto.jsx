@@ -16,7 +16,7 @@ function Projeto() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="w-screen h-screen  flex flex-col"
+      className="w-screen h-full  flex flex-col pb-[150px] space-y-32"
     >
       <Header />
 

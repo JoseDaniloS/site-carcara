@@ -3,11 +3,10 @@ import Mascote from "./images/mascote_background_carcara.png"
 function TextoProjeto() {
   return (
     <section
-      id="projeto"
-      className="w-full h-[110vh] max-md:h-auto py-[50px] flex justify-around max-md:justify-center bg-[#030212] relative"
+      className="w-full h-full max-md:h-auto py-[250px] flex justify-around max-md:justify-center bg-[#030212] relative"
     >
       <div className="w-[40vw] max-lg:w-[90vw]">
-        <h1 className="text-[52px] max-md:text-[40px] text-[#FFFFFFCC] font-montserrat ">
+        <h1 id="projeto" className="text-[52px] max-md:text-[40px] text-[#FFFFFFCC] font-montserrat ">
           Infraestrutura e<br />
           <span className="text-[#F08B38]">Desenvolvimento</span>
         </h1>

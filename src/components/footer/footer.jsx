@@ -25,7 +25,7 @@ function footer() {
             </ul>
           </div>
           <div>
-            <h1 className="text-[14px] py-2 font-bold font-montserrat">
+            <h1 id="contato" className="text-[14px] py-2 font-bold font-montserrat">
               Contato
             </h1>
             <ul className="flex flex-col gap-2 text-[14px]">
