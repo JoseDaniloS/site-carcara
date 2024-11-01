@@ -3,7 +3,7 @@ import { cardsInformativos } from "./components/cardsInformativo";
 function Atividade() {
   const Card = ({ card }) => {
     return (
-      <div className="w-[368px] h-[204px] border border-[#0000001A] shadow-md flex flex-col items-center justify-evenly rounded overflow-hidden px-5">
+      <div className="w-[368px] max-md:w-[90vw] h-[204px] border border-[#0000001A] shadow-md flex flex-col items-center justify-evenly rounded overflow-hidden px-5">
         <div className="flex w-full justify-start gap-10 items-center">
           <img src={card.imagem} alt="" className="w-[32px] h-[32px]"/>
           <p className="text-[18px] font-medium text-[#030212]">{card.titulo}</p>
@@ -40,7 +40,7 @@ function Atividade() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-[32px] justify-center items-center">
+        <div className="flex flex-wrap max-md:w-[90vw] gap-[32px] justify-center items-center">
           {cardsInformativos.map((card, index) => (
             <Card key={index} card={card} />
           ))}
