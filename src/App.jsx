@@ -1,9 +1,9 @@
-import InitialPage from "./pages/initial-page"
+import InitialPage from "./pages/initial-page";
 
-function App(){
-  return(
+function App() {
+  return (
     <InitialPage />
-  )
+  );
 }
 
-export default App
+export default App;

@@ -5,7 +5,7 @@ import Atividade from "./components/atividade/atividade";
 
 function Main() {
   return (
-    <main className="flex flex-col font-montserrat">
+    <main className="flex flex-col font-sans">
       <Projeto/>
       <TextoProjeto />
       <Atividade />

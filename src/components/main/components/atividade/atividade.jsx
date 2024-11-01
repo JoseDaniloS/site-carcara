@@ -22,17 +22,17 @@ function Atividade() {
     >
       <div className="max-w-[1170px] max-md:w-[90vw] flex flex-col items-center gap-[100px]">
         <div className="max-w-[718px] flex flex-col gap-5">
-          <div>
+          <div className="flex flex-col items-center">
+          <h1 id="atividade" className="w-[100px] border-b-2 border-[#F08B38] text-[12px] font-semibold">ATIVIDADES</h1>
             <h1
-              id="atividade"
-              className="text-[52px] max-md:text-[40px] font-medium leading-[63.39px] text-[#00000099] font-montserrat"
+              className="text-[52px] max-md:text-[40px] font-medium leading-[63.39px] text-[#00000099]"
             >
               Fortalecendo a<br /> Universidade com{" "}
-              <span className="text-[#F08B38]">Carcará</span>
+              <span className="text-[#F08B38] font-bold">Carcará</span>
             </h1>
           </div>
           <div>
-            <span className="text-[18px] font-montserrat leading-[19.5px] text-[#00000099] text-justify">
+            <span className="text-[18px] leading-[19.5px] text-[#00000099] text-justify">
               Fortalecendo a conectividade e segurança da Universidade, o
               projeto "Carcará" visa modernizar a infraestrutura tecnológica com
               foco na estabilidade e velocidade da rede.

@@ -36,11 +36,7 @@ function Header() {
         {menuItems.map((item) => (
           <li
             key={item.name}
-            className={`py-[8px] px-[24px] rounded-[4px] flex items-center ${
-              topico === item.name.toLowerCase()
-                ? "bg-[#F08B38] text-[#030212]"
-                : "bg-transparent"
-            }`}
+            className={`py-[8px] px-[24px] rounded-[4px] flex items-center`}
           >
             <a
               href={item.href}
