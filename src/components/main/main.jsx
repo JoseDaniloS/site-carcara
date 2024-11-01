@@ -1,13 +1,13 @@
 import Projeto from "./components/projeto/projeto";
-import Atividade from "./components/atividade/atividade";
 import Membros from "./components/membros/membros";
 import Contato from "./components/contato/contato";
+import TextoProjeto from "./components/projeto/texto_projeto"
 
 function Main() {
   return (
-    <main className="flex flex-col space-y-12">
-      <Projeto />
-      <Atividade />
+    <main className="flex flex-col font-montserrat">
+      <Projeto/>
+      <TextoProjeto />
       <Membros />
       <Contato />
     </main>
