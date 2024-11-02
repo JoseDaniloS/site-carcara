@@ -1,47 +1,47 @@
-import Reudismam from "./image/reudismam.jpg";
-import Walber from "./image/walber.jpg";
-import Laura from "./image/Laura.jpeg";
-import PedroArthur from "./image/PedroArthur.jpg";
-import PedroLucas from "./image/PedroLucas.jpeg";
-import AnaVitoria from "./image/AnaVitoria.jpg";
-import Alice from "./image/Alice.webp";
-import JoseDanilo from "./image/JoseDanilo.jpg";
-import MariaKaroline from "./image/MariaKaroline.jpg"
+import Reudismam from "../image/reudismam.jpg";
+import Walber from "../image/walber.jpg";
+import Laura from "../image/Laura.jpeg";
+import PedroArthur from "../image/PedroArthur.jpg";
+import PedroLucas from "../image/PedroLucas.jpeg";
+import AnaVitoria from "../image/AnaVitoria.jpg";
+import Alice from "../image/Alice.webp";
+import JoseDanilo from "../image/JoseDanilo.jpg";
+import MariaKaroline from "../image/MariaKaroline.jpg"
 
 const Infraestrutura = [
   { Nome: "Alice Santos", Funcao: "Membro", Imagem: Alice },
   { Nome: "Pedro Arthur", Funcao: "Membro", Imagem: PedroArthur },
   { Nome: "Pedro Lucas", Funcao: "Membro", Imagem: PedroLucas },
   { Nome: "Maria Karoline", Funcao: "Membro", Imagem: MariaKaroline },
+  { Nome: "Cicero Araujo", Funcao: "Membro", Imagem: {} },
 ]
 const BackEnd = [
-  { Nome: "Ana Vitória", Funcao: "Membro", Imagem: AnaVitoria },
+  { Nome: "Lucas Mairon", Funcao: "Membro", Imagem: {} },
+  { Nome: "Lidiana Costa", Funcao: "Membro", Imagem: {} },
 ]
 const FrontEnd = [
   { Nome: "José Danilo", Funcao: "Membro", Imagem: JoseDanilo },
+  { Nome: "Maria Francisca", Funcao: "Membro", Imagem: {} },
 ]
 
 const Requisitos = [
   { Nome: "Laura Gonçalves", Funcao: "Membro", Imagem: Laura },
+  { Nome: "Ana Vitória", Funcao: "Membro", Imagem: AnaVitoria },
+  { Nome: "Maria Luma", Funcao: "Membro", Imagem: {} },
 ]
 
 const GestoresDeProjeto = [
+  { Nome: "Andrey Oliveira", Funcao: "Membro", Imagem: {} },
+  { Nome: "Allan Silva", Funcao: "Membro", Imagem: {} },
 ]
 
 const Designer = [
+  { Nome: "Maria Isabelly", Funcao: "Membro", Imagem: "" },
 ]
 
 const Discentes = [
-  { Nome: "Maria Francisca", Funcao: "Membro", Imagem: {} },
-  { Nome: "Maria Isabelly", Funcao: "Membro", Imagem: {} },
-  { Nome: "Andrey Oliveira", Funcao: "Membro", Imagem: {} },
-  { Nome: "Maria Luma", Funcao: "Membro", Imagem: {} },
-  { Nome: "Lucas Mairon", Funcao: "Membro", Imagem: {} },
-  { Nome: "Lidiana Costa", Funcao: "Membro", Imagem: {} },
   { Nome: "Vinicius Anacleto", Funcao: "Membro", Imagem: {} },
-  { Nome: "Cicero Araujo", Funcao: "Membro", Imagem: {} },
   { Nome: "Alicia Oliveira", Funcao: "Membro", Imagem: {} },
-  { Nome: "Allan Silva", Funcao: "Membro", Imagem: {} },
   { Nome: "Amanda Alencar", Funcao: "Membro", Imagem: {} },
   { Nome: "Andrews Paiva", Funcao: "Membro", Imagem: {} },
   { Nome: "Antonia Souza", Funcao: "Membro", Imagem: {} },

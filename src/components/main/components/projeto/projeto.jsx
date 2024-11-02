@@ -26,7 +26,7 @@ function Projeto() {
             Conhecimento que <span className="text-[#F08B38]">Voa Alto</span>
           </h1>
           <p className="mt-4 text-[18px] text-[#FFFFFF] font-medium">
-            Uma equipe formada por alunos que, unidos, transforma ideias em
+            Uma equipe formada por alunos que, unidos, transformam ideias em
             serviços para a própria universidade, trazendo inovação e dedicação
             com o espírito do nordeste
           </p>

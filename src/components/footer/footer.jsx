@@ -9,8 +9,8 @@ function footer() {
   };
 
   return (
-    <footer className="bg-[#030212] w-full text-[#FFFFFFB2] flex flex-col pt-6">
-      <div className="flex justify-around items-center gap-10 pb-6 max-md:px-5">
+    <footer className="bg-[#030212] w-full text-[#FFFFFFB2] flex items-center flex-col pt-6">
+      <div className="flex w-[1169px] max-md:w-full justify-between items-center gap-10 pb-6 max-md:px-5">
         <div>
           <img src={LogoCarcara} alt="" className="w-[250px]" />
         </div>
@@ -76,7 +76,7 @@ function footer() {
           </div>
         </div>
       </div>
-      <div className="border-t-2 border-[#F08B3866] flex justify-center">
+      <div className="border-t-2 w-full border-[#F08B3866] flex justify-center">
         <p className="text-sm flex p-3 border-[#F08B3866]">
           &copy; 2024 Projeto Carcará. Todos os direitos reservados.
         </p>

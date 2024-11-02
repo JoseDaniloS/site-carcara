@@ -6,55 +6,60 @@ import {
   Designer,
   BackEnd,
   Requisitos,
-  Docentes,
-} from "./members";
+} from "./components/members";
 
-function Professores() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  return (
-    <div className="max-w-[1169px] max-md:w-[90vw] flex flex-col items-center justify-center gap-16">
-      <div className="max-w-[870px] flex text-center items-center flex-col gap-5">
-        <h1 className="text-[52px] max-md:text-[40px] text-[#F08B38] font-bold">
-          Coordenadores
-        </h1>
-        <p className="text-[16px] max-w-[700px] text-[#00000099]">
-          Profissionais especialistas que orientam e fortalecem a instituição,
-          garantindo a excelência acadêmica e administrativa.
-        </p>
-      </div>
-      <div className="flex gap-10 flex-wrap justify-center">
-        {Docentes.map((docente, index) => (
-          <div
-            key={index}
-            className={`w-[259px] h-[298px] rounded-[5px]  shadow-md flex flex-col p-4 justify-end transition-transform duration-300 ${
-              hoveredIndex === index ? "scale-110" : "scale-100"
-            }`}
-            style={{
-              backgroundImage: `url(${docente.Imagem})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <p className="text-white font-extrabold text-[18px]">
-              {docente.Nome}
-            </p>
-            <span></span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+import Professores from "./components/professores";
+import ArrayAlunos from "./components/alunos";
+import ArrowLeft from "./anterior.png";
+import ArrowRight from "./posterior.png";
 
 function Alunos() {
+  const itensPorPagina = 4;
+
+  // Estado para controlar o índice atual de cada grupo de alunos
+  const [indicesAtuais, setIndicesAtuais] = useState({
+    gestores: 0,
+    requisitos: 0,
+    frontend: 0,
+    backend: 0,
+    designer: 0,
+    infraestrutura: 0,
+  });
+
+  const obterItensAtuais = (grupo, indiceAtual) => {
+    return grupo.slice(indiceAtual, indiceAtual + itensPorPagina);
+  };
+
+  const Proximo = (grupo, grupoKey) => {
+    const indiceAtual = indicesAtuais[grupoKey];
+    if (indiceAtual + itensPorPagina < grupo.length) {
+      setIndicesAtuais((prev) => ({
+        ...prev,
+        [grupoKey]: indiceAtual + itensPorPagina,
+      }));
+    }
+  };
+
+  const Anterior = (grupo, grupoKey) => {
+    const indiceAtual = indicesAtuais[grupoKey];
+    if (indiceAtual - itensPorPagina >= 0) {
+      setIndicesAtuais((prev) => ({
+        ...prev,
+        [grupoKey]: indiceAtual - itensPorPagina,
+      }));
+    }
+  };
+
   return (
-    <div className="max-w-[1170px] max-md:w-[90vw] flex flex-col items-center justify-center gap-16">
+    <div className="max-w-[1170px] overflow-hidden max-md:w-[90vw] flex flex-col items-center justify-center gap-16">
       <div className="max-w-[770px] flex text-center items-center flex-col gap-5">
-        <h1 id="membros" className="w-[100px] border-b-2 border-[#F08B38] text-[12px] font-semibold">MEMBROS</h1>
-        
+        <h1
+          id="membros"
+          className="w-[100px] border-b-2 border-[#F08B38] text-[12px] font-semibold"
+        >
+          MEMBROS
+        </h1>
+
         <h1 className="text-[52px] max-md:text-[40px] text-[#F08B38] font-bold">
           Alunos em Ação
         </h1>
@@ -64,70 +69,144 @@ function Alunos() {
           atividades.
         </p>
       </div>
+
+      {/* Gestores de Projeto */}
       <div className="w-full space-y-5 flex flex-col max-md:items-center">
         <h1 className="text-[24px] font-medium">Gestores de Projeto</h1>
-      </div>
-      <div className="w-full space-y-5 flex flex-col max-md:items-center">
-        <h1 className="text-[24px] font-medium">Analista de Requisitos</h1>
         <div className="w-full flex gap-10 flex-wrap max-md:justify-center">
-          {Requisitos.map((aluno, index) => (
-            <div
-              key={index}
-              className="w-[259px] h-[120px] rounded-[8px] p-[16px] gap-[8px] border border-[#0000001A] flex items-center justify-center"
-            > 
-              <img src={aluno.Imagem} alt="" className="w-[88px] h-[88px] object-cover object-center rounded-full"/>
-              <hr className="border border-[#0000001A] h-full" />
-              {aluno.Nome}
-            </div>
+          {GestoresDeProjeto.map((aluno, index) => (
+            <ArrayAlunos key={index} Imagem={aluno.Imagem} Nome={aluno.Nome} />
           ))}
         </div>
       </div>
+
+      {/* Analista de Requisitos */}
       <div className="w-full space-y-5 flex flex-col max-md:items-center">
-        <h1 className="text-[24px] font-medium">Front End</h1>
+        <div className="w-full flex justify-between">
+          <p className="text-[24px] font-medium">Analistas de Requisitos</p>
+          <div className="flex gap-5">
+            <button onClick={() => Anterior(Requisitos, "requisitos")}>
+              <img src={ArrowLeft} className="w-[30px]" alt="Anterior" />
+            </button>
+            <button onClick={() => Proximo(Requisitos, "requisitos")}>
+              <img src={ArrowRight} className="w-[25px]" alt="Próximo" />
+            </button>
+          </div>
+        </div>
         <div className="w-full flex gap-10 flex-wrap max-md:justify-center">
-          {FrontEnd.map((aluno, index) => (
-            <div
-              key={index}
-              className="w-[259px] h-[120px] rounded-[8px] p-[16px] gap-[8px] border border-[#0000001A] flex items-center justify-center"
-            > 
-              <img src={aluno.Imagem} alt="" className="w-[88px] h-[88px] object-cover object-center rounded-full"/>
-              <hr className="border border-[#0000001A] h-full" />
-              {aluno.Nome}
-            </div>
-          ))}
+          {obterItensAtuais(Requisitos, indicesAtuais.requisitos).map(
+            (aluno, index) => (
+              <ArrayAlunos
+                key={index}
+                Imagem={aluno.Imagem}
+                Nome={aluno.Nome}
+              />
+            )
+          )}
         </div>
       </div>
+
+      {/* Front-End */}
       <div className="w-full space-y-5 flex flex-col max-md:items-center">
-        <h1 className="text-[24px] font-medium">Back End</h1>
+        <div className="w-full flex justify-between">
+          <p className="text-[24px] font-medium">Front-End</p>
+          <div className="flex gap-5">
+            <button onClick={() => Anterior(FrontEnd, "frontend")}>
+              <img src={ArrowLeft} className="w-[30px]" alt="Anterior" />
+            </button>
+            <button onClick={() => Proximo(FrontEnd, "frontend")}>
+              <img src={ArrowRight} className="w-[25px]" alt="Próximo" />
+            </button>
+          </div>
+        </div>
         <div className="w-full flex gap-10 flex-wrap max-md:justify-center">
-          {BackEnd.map((aluno, index) => (
-            <div
-              key={index}
-              className="w-[259px] h-[120px] rounded-[8px] p-[16px] gap-[8px] border border-[#0000001A] flex items-center justify-center"
-            > 
-              <img src={aluno.Imagem} alt="" className="w-[88px] h-[88px] object-cover object-center rounded-full"/>
-              <hr className="border border-[#0000001A] h-full" />
-              {aluno.Nome}
-            </div>
-          ))}
+          {obterItensAtuais(FrontEnd, indicesAtuais.frontend).map(
+            (aluno, index) => (
+              <ArrayAlunos
+                key={index}
+                Imagem={aluno.Imagem}
+                Nome={aluno.Nome}
+              />
+            )
+          )}
         </div>
       </div>
+
+      {/* Back-End */}
       <div className="w-full space-y-5 flex flex-col max-md:items-center">
-        <h1 className="text-[24px] font-medium">Designer</h1>
-      </div>
-      <div className="w-full space-y-5 flex flex-col max-md:items-center">
-        <h1 className="text-[24px] font-medium">Infraestrutura</h1>
+        <div className="w-full flex justify-between">
+          <p className="text-[24px] font-medium">Back-End</p>
+          <div className="flex gap-5">
+            <button onClick={() => Anterior(BackEnd, "backend")}>
+              <img src={ArrowLeft} className="w-[30px]" alt="Anterior" />
+            </button>
+            <button onClick={() => Proximo(BackEnd, "backend")}>
+              <img src={ArrowRight} className="w-[25px]" alt="Próximo" />
+            </button>
+          </div>
+        </div>
         <div className="w-full flex gap-10 flex-wrap max-md:justify-center">
-          {Infraestrutura.map((aluno, index) => (
-            <div
-              key={index}
-              className="w-[259px] h-[120px] rounded-[8px] p-[16px] gap-[8px] border border-[#0000001A] flex items-center justify-center"
-            > 
-              <img src={aluno.Imagem} alt="" className="w-[88px] h-[88px] object-cover object-center rounded-full"/>
-              <hr className="border border-[#0000001A] h-full" />
-              {aluno.Nome}
-            </div>
-          ))}
+          {obterItensAtuais(BackEnd, indicesAtuais.backend).map(
+            (aluno, index) => (
+              <ArrayAlunos
+                key={index}
+                Imagem={aluno.Imagem}
+                Nome={aluno.Nome}
+              />
+            )
+          )}
+        </div>
+      </div>
+
+      {/* Designer */}
+      <div className="w-full space-y-5 flex flex-col max-md:items-center">
+        <div className="w-full flex justify-between">
+          <p className="text-[24px] font-medium">Designer</p>
+          <div className="flex gap-5">
+            <button onClick={() => Anterior(Designer, "designer")}>
+              <img src={ArrowLeft} className="w-[30px]" alt="Anterior" />
+            </button>
+            <button onClick={() => Proximo(Designer, "designer")}>
+              <img src={ArrowRight} className="w-[25px]" alt="Próximo" />
+            </button>
+          </div>
+        </div>
+        <div className="w-full flex gap-10 flex-wrap max-md:justify-center">
+          {obterItensAtuais(Designer, indicesAtuais.designer).map(
+            (aluno, index) => (
+              <ArrayAlunos
+                key={index}
+                Imagem={aluno.Imagem}
+                Nome={aluno.Nome}
+              />
+            )
+          )}
+        </div>
+      </div>
+
+      {/* Infraestrutura */}
+      <div className="w-full space-y-5 flex flex-col max-md:items-center">
+        <div className="w-full flex justify-between">
+          <p className="text-[24px] font-medium">Infraestrutura</p>
+          <div className="flex gap-5">
+            <button onClick={() => Anterior(Infraestrutura, "infraestrutura")}>
+              <img src={ArrowLeft} className="w-[30px]" alt="Anterior" />
+            </button>
+            <button onClick={() => Proximo(Infraestrutura, "infraestrutura")}>
+              <img src={ArrowRight} className="w-[25px]" alt="Próximo" />
+            </button>
+          </div>
+        </div>
+        <div className="w-full flex gap-10 flex-wrap max-md:justify-center">
+          {obterItensAtuais(Infraestrutura, indicesAtuais.infraestrutura).map(
+            (aluno, index) => (
+              <ArrayAlunos
+                key={index}
+                Imagem={aluno.Imagem}
+                Nome={aluno.Nome}
+              />
+            )
+          )}
         </div>
       </div>
     </div>
@@ -138,7 +217,6 @@ function Membros() {
   return (
     <section className="w-full flex flex-col justify-center items-center space-y-16 py-8">
       <Professores />
-      
       <Alunos />
     </section>
   );
